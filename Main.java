@@ -1,6 +1,10 @@
 package CogRob;
 
 public class Main {
+	/**
+	 * Main only used to initialize needed objects, throw these into Hub and start the programme from there.
+	 * @param args
+	 */
 
 	public static void main(String[] args) {
 		//Make objects to put in Hub
