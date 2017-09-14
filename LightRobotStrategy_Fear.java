@@ -20,7 +20,7 @@ public class LightRobotStrategy_Fear extends Hub implements Strategy {
 			
 			/*****START OF STRATEGY*****/
 			utils.setMotorSpeed(robot.getLeftMotor(), 720, robot.getRightMotor(), 360); //Turn robot in circles to the right
-			
+			utils.driveForward(robot.getLeftMotor(), robot.getRightMotor());
 		}
 		else {System.out.println("Pairing non-LightRobot class Robot with LightRobotStrategy");}
 	}

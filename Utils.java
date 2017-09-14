@@ -19,4 +19,30 @@ public class Utils {
 		motor2.setSpeed(speed2);
 	}
 	
+	public void driveForward (RegulatedMotor motor) {
+		motor.forward();
+	}
+	
+	public void driveForward (RegulatedMotor motor1, RegulatedMotor motor2) {
+		motor1.forward();
+		motor2.forward();
+	}
+	
+	public void driveBackward (RegulatedMotor motor) {
+		motor.backward();
+	}
+	
+	public void driveBackward (RegulatedMotor motor1, RegulatedMotor motor2) {
+		motor1.backward();
+		motor2.backward();
+	}
+	
+	public void stopDriving(RegulatedMotor motor) {
+		motor.stop();
+	}
+	
+	public void stopDriving(RegulatedMotor motor1, RegulatedMotor motor2) {
+		motor1.stop();
+		motor2.stop();
+	}
 }
