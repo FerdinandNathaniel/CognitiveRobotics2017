@@ -6,7 +6,5 @@ public interface Robot {
 	 * Any function put in here has to be implemented in every Robot that uses this interface.
 	 */
 	
-	public void addUtils(Utils utils);
-	public void addStrategy(Strategy strategy);
 	public void runStrategy();
 }

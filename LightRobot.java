@@ -5,39 +5,30 @@ import lejos.hardware.port.*;
 import lejos.hardware.sensor.*;
 import lejos.robotics.RegulatedMotor;
 
-public class LightRobot implements Robot{
+public class LightRobot extends Hub implements Robot{
 	/*****LIGHTROBOT*****
-	 * Our lovely little doom device that wants to hug light. Has:
+	 * Our lovely little doom device that wants to interact with light. Has:
 	 * - Two motors, left and right
-	 * - One light sensor
-	 * - A strategy to perform
-	 * - Access to the Hub's utilities (help functions)
+	 * - Two light sensors, left and right
+	 * - A strategy to perform (in super class Hub)
+	 * - Access to the Hub's utilities (in super class Hub)
 	 */
 	
 	private RegulatedMotor leftMotor;
 	private RegulatedMotor rightMotor; 
-	private SensorModes lightSensor; 
-	private Strategy strategy;
-	private Utils utils;
+	private SensorModes leftLightSensor; 
+	private SensorModes rightLightSensor;
 	
 	public LightRobot() {
-		this.leftMotor = new EV3LargeRegulatedMotor(MotorPort.A);  //EDIT: ADD CORRECT PORT
-		this.rightMotor = new EV3LargeRegulatedMotor(MotorPort.A); //EDIT: ADD CORRECT PORT
-		this.lightSensor = new EV3UltrasonicSensor(SensorPort.S1); //EDIT: ADD CORRECT PORT
+		super();
+		this.leftMotor = new EV3LargeRegulatedMotor(MotorPort.B);  //EDIT: ADD CORRECT PORT
+		this.rightMotor = new EV3LargeRegulatedMotor(MotorPort.C); //EDIT: ADD CORRECT PORT
+		this.leftLightSensor = new EV3UltrasonicSensor(SensorPort.S1); //EDIT: ADD CORRECT PORT
+		this.rightLightSensor = new EV3UltrasonicSensor(SensorPort.S4); //EDIT: ADD CORRECT PORT
 	}
 	
 
 	/************************************************INTERFACE FUNCTIONS*****************************************/
-	
-	@Override
-	public void addUtils(Utils utils) {
-		this.utils = utils;
-	}
-
-	@Override
-	public void addStrategy(Strategy strategy) {
-		this.strategy = strategy;
-	}
 
 	@Override
 	public void runStrategy() {

@@ -9,14 +9,17 @@ public class Hub {
 	 */
 	
 	/************************************************SINGULAR ROBOT************************************************/
-	private Strategy strategy;
-	private Utils utils;
+	protected Strategy strategy;
+	protected Utils utils;
 	private Robot robot; //Without the Robot interface this would have needed to be redefined every new robot we make
+	
+	public Hub () {
+	}
 	
 	public Hub (Strategy strategy, Utils utils, Robot robot) {
 		this.strategy = strategy;
 		this.utils = utils;
-		this.robot = utils.addRobot(strategy, utils, robot);
+		this.robot = robot;
 	}
 	
 	

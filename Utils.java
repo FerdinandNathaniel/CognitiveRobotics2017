@@ -8,10 +8,4 @@ public class Utils {
 	public Utils() {
 	}
 	
-	public Robot addRobot(Strategy strategy, Utils utils, Robot robot) {
-		robot.addStrategy(strategy);
-		robot.addUtils(utils);
-		return robot;
-	}
-	
 }
