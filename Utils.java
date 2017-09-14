@@ -1,5 +1,6 @@
 package CogRob;
 
+import lejos.hardware.sensor.SensorModes;
 import lejos.robotics.RegulatedMotor;
 
 public class Utils {
@@ -44,5 +45,14 @@ public class Utils {
 	public void stopDriving(RegulatedMotor motor1, RegulatedMotor motor2) {
 		motor1.stop();
 		motor2.stop();
+	}
+	
+	public void lightSensorRedMode(SensorModes lightSensor) {
+		lightSensor.setCurrentMode("Red");
+	}
+	
+	public void lightSensorRedMode(SensorModes lightSensor1, SensorModes lightSensor2) {
+		lightSensor1.setCurrentMode("Red");
+		lightSensor2.setCurrentMode("Red");
 	}
 }
