@@ -55,4 +55,11 @@ public class Utils {
 		lightSensor1.setCurrentMode("Red");
 		lightSensor2.setCurrentMode("Red");
 	}
+	
+	//CHECK IF WORKS
+	public float getRedLightSample(SensorModes lightSensor) {
+		float[]redSample = new float[lightSensor.sampleSize()];
+		lightSensor.fetchSample(redSample, 0);
+		return redSample[0];
+	}
 }

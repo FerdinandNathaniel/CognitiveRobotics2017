@@ -20,9 +20,15 @@ public class LightRobotStrategy_Fear extends Hub implements Strategy {
 			
 			/*****START OF STRATEGY*****/
 			//utils.lightSensorRedMode(robot.getLeftLightSensor(), robot.getRightLightSensor()); //Make sure lightsensors are in Red mode, not sure if needs to be done
-			utils.setMotorSpeed(robot.getLeftMotor(), 720, robot.getRightMotor(), 360); //Turn robot in circles to the right
+			utils.setMotorSpeed(robot.getLeftMotor(), 720, robot.getRightMotor(), 720); //Turn robot in circles to the right
 			utils.driveForward(robot.getLeftMotor(), robot.getRightMotor());
-			
+			while(true) {//Ugh
+				if(utils.getRedLightSample(robot.getLeftLightSensor()) > 0.3) {
+					utils.setMotorSpeed(robot.getLeftMotor(), speed);
+				}
+				if(utils.getRedLightSample(robot.getRightLightSensor()) > 0.3){
+					
+				}
 		}
 		else {System.out.println("Pairing non-LightRobot class Robot with LightRobotStrategy");}
 	}
