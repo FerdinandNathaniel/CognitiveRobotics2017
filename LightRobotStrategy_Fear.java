@@ -14,7 +14,13 @@ public class LightRobotStrategy_Fear implements Strategy {
 
 	@Override
 	public void startStrategy(Robot robot) {
-		System.out.println("Starting LightRobotStrategy - Fear");
+		if(robot.getClass() == LightRobot.class) {
+			LightRobot robott = (LightRobot) robot;
+			System.out.println("Starting LightRobotStrategy - Fear");
+		}
+		else {
+			System.out.println("Pairing non-LightRobot class Robot with LightRobotStrategy");
+		}
 	}
 
 }

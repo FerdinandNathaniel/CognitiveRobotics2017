@@ -38,5 +38,42 @@ public class LightRobot extends Hub implements Robot{
 	
 	/*************************************************CLASS FUNCTIONS*******************************************/
 	
+	public RegulatedMotor getLeftMotor() {
+		return leftMotor;
+	}
 
+
+	public void setLeftMotor(RegulatedMotor leftMotor) {
+		this.leftMotor = leftMotor;
+	}
+
+
+	public RegulatedMotor getRightMotor() {
+		return rightMotor;
+	}
+
+
+	public void setRightMotor(RegulatedMotor rightMotor) {
+		this.rightMotor = rightMotor;
+	}
+
+
+	public SensorModes getLeftLightSensor() {
+		return leftLightSensor;
+	}
+
+
+	public void setLeftLightSensor(SensorModes leftLightSensor) {
+		this.leftLightSensor = leftLightSensor;
+	}
+
+
+	public SensorModes getRightLightSensor() {
+		return rightLightSensor;
+	}
+
+
+	public void setRightLightSensor(SensorModes rightLightSensor) {
+		this.rightLightSensor = rightLightSensor;
+	}
 }
