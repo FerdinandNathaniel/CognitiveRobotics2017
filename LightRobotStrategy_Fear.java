@@ -1,10 +1,10 @@
 package CogRob;
 
-public class LightRobotStrategy_Fear implements Strategy {
+public class LightRobotStrategy_Fear extends Hub implements Strategy {
 	/*****LIGHTROBOTSTRATEGY*****
 	 * The strategy our lightRobot will have to use, it's as follows:
-	 * - Let one wheel keep turning whilst the other stays still
-	 * - If light sensor readings come above a certain threshold let the still wheel turn as fast as the other wheel
+	 * - Let lightRobot drive in semi circles
+	 * - If light sensor readings come above a certain threshold let the wheel on the same side turn faster
 	 * 
 	 * Has a Robot object so it can use everything a Robot has whilst keeping strategy-specific functions contained in this class.
 	 */
@@ -13,14 +13,16 @@ public class LightRobotStrategy_Fear implements Strategy {
 	}
 
 	@Override
-	public void startStrategy(Robot robot) {
-		if(robot.getClass() == LightRobot.class) {
-			LightRobot robott = (LightRobot) robot;
+	public void startStrategy(Robot r) {
+		if(r.getClass() == LightRobot.class) {
+			LightRobot robot = (LightRobot) r;
 			System.out.println("Starting LightRobotStrategy - Fear");
+			
+			/*****START OF STRATEGY*****/
+			utils.setMotorSpeed(robot.getLeftMotor(), 720, robot.getRightMotor(), 360); //Turn robot in circles to the right
+			
 		}
-		else {
-			System.out.println("Pairing non-LightRobot class Robot with LightRobotStrategy");
-		}
+		else {System.out.println("Pairing non-LightRobot class Robot with LightRobotStrategy");}
 	}
 
 }
